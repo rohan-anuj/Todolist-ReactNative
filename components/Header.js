@@ -12,14 +12,15 @@ export default function Header() {
   const styles=StyleSheet.create({
       container:{
           backgroundColor:"orange",
-          height:60,
+          height:80,
           justifyContent:"center",
           alignItems:"center"
       },
       Headercontent:{
           fontWeight:"bold",
           fontSize:20,
-          color:"#ffff"
+          color:"#ffff",
+          marginTop:30
       }
 
   })

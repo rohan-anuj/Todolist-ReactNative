@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, StyleSheet, FlatList, ScrollView,Alert, Button, TouchableOpacity } from "react-native"
+import { MaterialIcons } from '@expo/vector-icons'; 
 
 export default function Todolist() {
     const [Data, setData] = useState([])
@@ -29,10 +30,11 @@ export default function Todolist() {
             <View style={{ marginTop: 10 }}><Button onPress={submitHandled} title="Add +" color="orange" />
 
             </View>
-            <ScrollView>
+            <ScrollView style={{padding:10}}> 
                 {Data.map(item =>
-                    <TouchableOpacity key={item.key} onPress={() => pressHandled(item.key)} style={{ border: "dotted", padding: 10, borderWidth: 1, borderRadius: 10, fontSize: 10, borderColor: "orange", fontWeight: "bold", width: 300, marginTop: 10 }}>
-                        <Text>{item.name}</Text></TouchableOpacity>)}
+                    <TouchableOpacity key={item.key} onPress={() => pressHandled(item.key)} style={{ borderStyle: "dashed", flexDirection:"row", padding: 10, borderWidth: 1, borderRadius: 10, fontSize: 10, borderColor: "orange", fontWeight: "bold", width: 300, marginTop: 10 }}>
+                    <MaterialIcons style={{ width:20, color:"#b3b9b1"}} name="delete" size={24} color="black" /> 
+                       <Text style={{marginLeft:10 , fontSize:20,fontWeight:"bold", color:"#b3b9b1"}}>{item.name}</Text></TouchableOpacity>)}
             </ScrollView>
         </View>
     );
